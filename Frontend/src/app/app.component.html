@@ -1,0 +1,143 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <title>Form</title>
+</head>
+
+<body>
+  <div class="container col-md-6 mt-4">
+    <div class="card card-body">
+      <h2 class="text-center text-white bg-dark">Employee Details</h2>
+      <form action="/employee" method="POST" #form="ngForm" (ngSubmit)="submitForm(form.value)">
+        <div class="form-group">
+          <input type="text" name="name" id="name" class="form-control" placeholder="Enter name" #name="ngModel"
+            ngModel>
+        </div>
+        <div class="form-group">
+          <input type="text" name="position" id="position" class="form-control" placeholder="Enter position"
+            #position="ngModel" ngModel>
+        </div>
+        <div class="form-group">
+          <input type="text" name="office" id="office" class="form-control" placeholder="Enter Office" #office="ngModel"
+            ngModel>
+        </div>
+        <div class="form-group">
+          <input type="number" name="salary" id="salary" class="form-control" placeholder="Enter salary"
+            #salary="ngModel" ngModel>
+        </div>
+        <button type="submit" class="btn btn-outline-success float-right"> Submit </button>
+
+
+
+      </form>
+
+    </div>
+
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Office</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let getDataArray of getDataArrays'>
+        <td>{{getDataArray.name}}</td>
+        <td>{{getDataArray.position}}</td>
+        <td>{{getDataArray.office}}</td>
+        <td>{{getDataArray.salary}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="editEmployeeDetails(getDataArray)">
+            Edit
+          </button>
+        </td>
+        <td>
+          <button type="submit" class="btn btn-danger" (click)="deleteEmployees(getDataArray._id)">Delete</button>
+        </td>
+       
+
+      </tr>
+
+    </tbody>
+  </table>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+
+          <div class="card card-body">
+            <h2 class="text-center text-white bg-dark">Employee Details</h2>
+            <form action="" method="POST" #editform="ngForm" (ngSubmit)="updateEmployeeDetails(editform.value)">
+              <input type="hidden" name="id" #id='ngModel' [(ngModel)]="editdetails._id" ngModel>
+              <div class="form-group">
+                <input type="text" placeholder=" name" name="name" #name='ngModel' class="form-control" [(ngModel)]="editdetails.name" ngModel>
+                
+              
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder=" Position" name="position" #position='ngModel' class="form-control" [(ngModel)]="editdetails.position" ngModel>
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder=" office" name="office" #office='ngModel' class="form-control" [(ngModel)]="editdetails.office" ngModel>
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder=" salary" name="salary" #salary='ngModel' class="form-control" [(ngModel)]="editdetails.salary" ngModel>
+              </div>
+
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+
+            </form>
+
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+ 
+</body>
+
+</html>
+
+<app-autocomplete></app-autocomplete>
+ -->
+<router-outlet></router-outlet>

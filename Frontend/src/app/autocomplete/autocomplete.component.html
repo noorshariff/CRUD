@@ -1,0 +1,27 @@
+<p>autocomplete works!</p>
+
+<button type="button" (click)="increase()">Increase</button>
+
+
+
+
+<app-get-employee-details></app-get-employee-details>
+
+
+<!-- <h2 *ngIf = "displayVariable;else elseblock">Noor jabeena</h2>
+<ng-template #elseblock>
+    <h3>Testyantra</h3>
+</ng-template> -->
+
+
+<div *ngIf = "displayVariable ;then thenblock ; else elseblock"></div>
+
+<ng-template #thenblock>
+<h2>noor jabeena</h2>
+</ng-template>
+
+<ng-template #elseblock>
+    <h3>goodddddddd</h3>
+</ng-template>
+
+
